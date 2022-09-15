@@ -33,4 +33,5 @@ read -r -s password && echo "";
 aptManagerUpdate $password;
 aptManagerUpgrade $password;
 aptManagerFullUpgrade $password;
+
 aptManagerAutoRemove $password;
