@@ -19,11 +19,18 @@ function aptManagerFullUpgrade {
     echo -e $'Apt Manager Full Upgrade Finish!\n';
 }
 
+function aptManagerDistUpgrade {
+    echo -e $'\nApt Manager Dist Upgrade Start!';
+    echo -e $1 | sudo -S apt dist-upgrade -y;
+    echo -e $'Apt Manager Dist Upgrade Finish!\n';
+}
+
 function aptManagerAutoRemove {
     echo -e $'\nApt Manager Auto Remove Start!';
     echo -e $1 | sudo -S apt autoremove -y;
     echo -e $'Apt Manager Auto Remove Finish!\n';
 }
+
 
 
 printf $'Enter your password: ';
@@ -33,5 +40,6 @@ read -r -s password && echo "";
 aptManagerUpdate $password;
 aptManagerUpgrade $password;
 aptManagerFullUpgrade $password;
+aptManagerDistUpgrade $password;
 
 aptManagerAutoRemove $password;
